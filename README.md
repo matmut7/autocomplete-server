@@ -21,6 +21,19 @@ L'application propose une image Docker très basique. Aucune dépendance Python 
 L'image est disponible ici :
 <https://github.com/matmut7/autocomplete-server/pkgs/container/autocomplete-server>
 
+Exécuter le serveur :
+
+```sh
+docker run --rm -it -p 8080:8080 ghcr.io/matmut7/autocomplete-server:main
+```
+
+Puis utiliser l'API, par exemple avec `curl` :
+
+```txt
+curl 127.0.0.1:8080/autocomplete\?query=hai
+["haiku", "hail", "hails", "hair", "haircut", "hairs"]
+```
+
 ## Serveur
 
 Le serveur REST est également très simple. Les seules dépendances conséquentes sont de la bibliothèque standard : `http`, `urllib`, `json` et `logging`.
